@@ -1,7 +1,7 @@
 name: Playwright Tests for eShop
 on:
   push:
-    branches: [ main ]
+    branches: [ feature ]
     paths-ignore:
       - '**.md'
       - 'src/ClientApp/**'
