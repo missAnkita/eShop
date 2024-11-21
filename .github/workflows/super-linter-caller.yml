@@ -21,7 +21,7 @@ jobs:
       #note jscpd & checkov is ignored by filter_regex envs
       #filter-regex-include: ''
       #filter-regex-include: '.*\.(cs|js|sh|html|yml)$'
-      filter-regex-exclude: 'apim-caller.yml'
+      filter-regex-exclude: '(^|/)src/|(^|/)\\.github/'
       validate-jscpd: false
       validate-checkov: false
       #filter-regex-exclude: .*\.github/workflows/super\-linter\-caller\.yml
