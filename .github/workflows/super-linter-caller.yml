@@ -1,0 +1,30 @@
+# Testing apim policy deployment 1.8!
+name: Linting test
+
+
+# permissions are required
+permissions:
+  contents: read
+  id-token: write # Require write permission to Fetch an OIDC token.
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "release" branch
+  push:
+    branches: [ "main" ]
+
+  
+jobs:
+  caller-linter:
+    uses: missAnkita/Reusable-Workflows/.github/workflows/super-linter-resuable-wf.yml@feature/test-sprinter
+    with: 
+      #note jscpd & checkov is ignored by filter_regex envs
+      filter-regex-include: ''
+      #filter-regex-include: '.*\.(cs|js|sh|html|yml)$'
+      filter-regex-exclude: 'apim-caller.yml'
+      validate-jscpd: true
+      validate-checkov: true
+      #filter-regex-exclude: .*\.github/workflows/super\-linter\-caller\.yml
+       
+      
+ 
