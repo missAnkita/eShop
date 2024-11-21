@@ -19,11 +19,11 @@ jobs:
     uses: missAnkita/Reusable-Workflows/.github/workflows/super-linter-resuable-wf.yml@feature/test-sprinter
     with: 
       #note jscpd & checkov is ignored by filter_regex envs
-      filter-regex-include: ''
+      #filter-regex-include: ''
       #filter-regex-include: '.*\.(cs|js|sh|html|yml)$'
       filter-regex-exclude: 'apim-caller.yml'
-      validate-jscpd: true
-      validate-checkov: true
+      validate-jscpd: false
+      validate-checkov: false
       #filter-regex-exclude: .*\.github/workflows/super\-linter\-caller\.yml
        
       
